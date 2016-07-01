@@ -19,14 +19,14 @@ function bindEvents(app) {
     if (isDomEvent) {
       $(document).on(event, element, func);
     } else {
-      app.zafClient.on(event, func);
+      app.cafClient.on(event, func);
     }
   }.bind(app));
 }
 
-function BaseApp(zafClient, data) {
+function BaseApp(cafClient, data) {
   this._location = data.context.location;
-  this.zafClient = zafClient;
+  this.cafClient = cafClient;
   bindEvents(this);
 
   if (this.defaultState) {
@@ -52,7 +52,7 @@ BaseApp.prototype = {
         alwaysCallback = resolveHandler(this, name + '.always'),
         options = _.isFunction(req) ? req.apply(this, Array.prototype.slice.call(arguments, 1)) : req;
 
-    return this.zafClient.request(options)
+    return this.cafClient.request(options)
                          .then(doneCallback, failCallback)
                          .then(alwaysCallback, alwaysCallback);
   },

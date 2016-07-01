@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(11);
+	module.exports = __webpack_require__(10);
 
 
 /***/ },
@@ -58,15 +58,15 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _zendesk_app_framework_sdk = __webpack_require__(10);
+	var _cadence_app_framework_sdk = __webpack_require__(9);
 	
-	var _zendesk_app_framework_sdk2 = _interopRequireDefault(_zendesk_app_framework_sdk);
+	var _cadence_app_framework_sdk2 = _interopRequireDefault(_cadence_app_framework_sdk);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var client = _zendesk_app_framework_sdk2.default.init();
+	var client = _cadence_app_framework_sdk2.default.init();
 	
-	window.zafClient = client;
+	window.cafClient = client;
 	
 	client.on('app.registered', function (data) {
 	  var height = '100%';
@@ -96,7 +96,7 @@
 	
 	var _base_app2 = _interopRequireDefault(_base_app);
 	
-	var _helpers = __webpack_require__(9);
+	var _helpers = __webpack_require__(8);
 	
 	var _helpers2 = _interopRequireDefault(_helpers);
 	
@@ -378,14 +378,14 @@
 	    if (isDomEvent) {
 	      (0, _jquery2.default)(document).on(event, element, func);
 	    } else {
-	      app.zafClient.on(event, func);
+	      app.cafClient.on(event, func);
 	    }
 	  }.bind(app));
 	}
 	
-	function BaseApp(zafClient, data) {
+	function BaseApp(cafClient, data) {
 	  this._location = data.context.location;
-	  this.zafClient = zafClient;
+	  this.cafClient = cafClient;
 	  bindEvents(this);
 	
 	  if (this.defaultState) {
@@ -411,7 +411,7 @@
 	        alwaysCallback = resolveHandler(this, name + '.always'),
 	        options = _.isFunction(req) ? req.apply(this, Array.prototype.slice.call(arguments, 1)) : req;
 	
-	    return this.zafClient.request(options).then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback);
+	    return this.cafClient.request(options).then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback);
 	  },
 	
 	  renderTemplate: function renderTemplate(name, data) {
@@ -453,7 +453,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./testing.hdbs": 8
+		"./testing.hdbs": 6
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -470,14 +470,7 @@
 
 
 /***/ },
-/* 6 */,
-/* 7 */
-/***/ function(module, exports) {
-
-	module.exports = Handlebars;
-
-/***/ },
-/* 8 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Handlebars = __webpack_require__(7);
@@ -491,7 +484,13 @@
 	},"useData":true});
 
 /***/ },
-/* 9 */
+/* 7 */
+/***/ function(module, exports) {
+
+	module.exports = Handlebars;
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -527,13 +526,13 @@
 	exports.default = helpers;
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
-	module.exports = ZAFClient;
+	module.exports = CAFClient;
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

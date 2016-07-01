@@ -41,7 +41,7 @@ If you didn't install `webpack` globally, you can run it by `node_modules/.bin/w
 
 ## Testing
 This app is designed for testing the results of various Zendesk App Framework APIs. From within the app, you can run test commands
-like `zafClient.get('ticket.subject')`.
+like `cafClient.get('ticket.subject')`.
 
 ## Contribute
 Pull requests and Github issues are welcome. They'll be merged with two :+1:s from the maintainers.

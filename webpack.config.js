@@ -53,7 +53,7 @@ module.exports = {
     jquery: 'jQuery',
     lodash: '_',
     moment: 'moment',
-    zendesk_app_framework_sdk: 'ZAFClient'
+    cadence_app_framework_sdk: 'CAFClient'
   },
   debug: true,
   devtool: 'source-map',

@@ -1,9 +1,9 @@
 import App from './app';
-import ZAFClient from 'zendesk_app_framework_sdk';
+import CAFClient from 'cadence_app_framework_sdk';
 
-var client = ZAFClient.init();
+var client = CAFClient.init();
 
-window.zafClient = client;
+window.cafClient = client;
 
 client.on('app.registered', function(data) {
   var height = '100%';
